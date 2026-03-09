@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jjai-go2"
+version = "0.1.0"
+description = "JJAI Robot OS for Unitree Go2 — voice, vision, navigation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "JustJust AI", email = "hello@justjust.ai"}]
+
+dependencies = [
+    "go2-webrtc-connect>=0.1.0",
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "jinja2>=3.1.0",
+    "python-multipart>=0.0.6",
+    "websockets>=12.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "psutil>=5.9.0",
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.2.0",
+]
+vision = [
+    "insightface>=0.7.3",
+    "onnxruntime-gpu>=1.16.0",
+    "opencv-python>=4.8.0",
+]
+cloud = [
+    "boto3>=1.28.0",
+]
+
+[project.scripts]
+jjai-go2 = "jjai_go2.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

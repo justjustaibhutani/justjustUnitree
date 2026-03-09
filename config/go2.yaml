@@ -1,0 +1,12 @@
+# JJAI Go2 Configuration
+# Env vars override these values. See unitree_keys.env.template.
+
+robot_id: go2
+robot_ip: "192.168.12.1"  # Change to Go2's IP on your network
+connection_mode: sta_l     # sta_l (WiFi) or ap (hotspot)
+
+dashboard_host: "0.0.0.0"
+dashboard_port: 5003
+
+watchdog_interval: 5.0
+log_level: INFO

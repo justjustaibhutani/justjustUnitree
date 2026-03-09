@@ -1,0 +1,22 @@
+# Go2 SDK (WebRTC-first)
+go2-webrtc-connect>=0.1.0
+
+# Web dashboard
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+jinja2>=3.1.0
+python-multipart>=0.0.6
+
+# Voice
+websockets>=12.0
+numpy>=1.24.0
+
+# Utilities
+pyyaml>=6.0
+psutil>=5.9.0
+httpx>=0.24.0
+
+# Dev
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+ruff>=0.2.0
