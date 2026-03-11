@@ -1,0 +1,18 @@
+[Unit]
+Description=Momo Mini Apps Watcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=unitree
+Environment=LD_LIBRARY_PATH=/home/unitree/cyclonedds_ws/install/cyclonedds/lib
+Environment=PYTHONPATH=/home/unitree/unitree_sdk2_python
+EnvironmentFile=/home/unitree/aws_keys.env
+WorkingDirectory=/home/unitree/justjustUnitree
+ExecStart=/home/unitree/justjustUnitree/venv/bin/python3 /home/unitree/justjustUnitree/mini_app_watcher.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
